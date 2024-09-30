@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta property="og:title" content="Akeanti's Projects">
     <meta property="og:description" content="Akeanti, the tech lover and web dev, all my projects list!">
-    <meta property="og:image" content="https://raw.githubusercontent.com/akeanti/akeanti.github.io/main/pitures/akeanti.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/akeanti/akeanti.github.io/main/pictures/akeanti.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
     <title>Ak's Portfolio</title>
@@ -89,6 +89,21 @@
             transform: rotate(-5deg) scale(1.1);
         }
 
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -163,18 +178,17 @@
         }
 
         .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
 
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
         .project-card {
             background: linear-gradient(145deg, #1c1c28, #292c3f);
@@ -291,96 +305,97 @@
             }
         }
 
-/* Music Player */
-.music-player {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: #24243e;
-    padding: 1rem 1.5rem;
-    border-radius: 25px;
-    box-shadow: 0 10px 20px rgba(255, 41, 117, 0.6);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: transform 0.3s ease-in-out;
-    width: 350px;
-    overflow: hidden;
-}
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: #24243e;
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(255, 41, 117, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease-in-out;
+            width: 350px;
+            overflow: hidden;
+        }
 
-.music-player:hover {
-    transform: translateY(-5px);
-}
+        .music-player:hover {
+            transform: translateY(-5px);
+        }
 
-.music-player button {
-    background-color: #fff;
-    color: #ff2975;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 20%;
-    cursor: pointer;
-    font-size: 1rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
+        .music-player button {
+            background-color: #fff;
+            color: #ff2975;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 20%;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
 
-.music-player button:hover {
-    background-color: #f6f6f6;
-}
+        .music-player button:hover {
+            background-color: #f6f6f6;
+        }
 
-.music-title {
-    color: #f6f6f6;
-    font-size: 1rem;
-    font-weight: 500;
-    flex-grow: 1;
-}
+        .music-title {
+            color: #f6f6f6;
+            font-size: 1rem;
+            font-weight: 500;
+            flex-grow: 1;
+        }
 
-.music-progress {
-    flex-grow: 1;
-    background-color: #f6f6f6;
-    border-radius: 5px;
-    height: 6px;
-    position: relative;
-}
+        .music-progress {
+            flex-grow: 1;
+            background-color: #f6f6f6;
+            border-radius: 5px;
+            height: 6px;
+            position: relative;
+        }
 
-.music-progress span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0%;
-    background-color: #ff2975;
-    border-radius: 5px;
-    transition: width 0.4s ease-in-out;
-}
+        .music-progress span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background-color: #ff2975;
+            border-radius: 5px;
+            transition: width 0.4s ease-in-out;
+        }
 
-.music-time {
-    color: #ffffff;
-    font-size: 0.9rem;
-}
+        .music-time {
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
 
-.volume-control {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-.volume-slider {
-    -webkit-appearance: none;
-    width: 100px;
-    height: 4px;
-    background: #f6f6f6;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .volume-slider {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 4px;
+            background: #f6f6f6;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #ff2975;
-    border-radius: 50%;
-    cursor: pointer;
-}
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #ff2975;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
         /* Stats Section */
         .stats {
             background-color: #0b0e21;
@@ -433,15 +448,166 @@
             font-size: 1.2rem;
         }
 
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
+            /* Hamburger Menu */
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Adjust based on nav height */
+                left: -100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                transition: left 0.3s ease;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul li {
+                margin: 1.5rem 0;
+                text-align: center;
+            }
+
+            /* Reduce Text Sizes */
+            body {
+                font-size: 14px;
+            }
+
+            nav h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .projects h2,
+            .stats h2 {
+                font-size: 2rem;
+            }
+
+            .project-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .project-card p {
+                font-size: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stat p {
+                font-size: 1rem;
+            }
+
+            /* Adjust Music Player */
+            .music-player {
+                width: 90%;
+                right: 5%;
+                bottom: 10px;
+            }
+
+            .music-player .music-title {
+                display: none;
+            }
+
+            .music-player .music-time {
+                display: none;
+            }
+        }
+
+        /* Additional Media Queries for Even Smaller Devices */
+        @media (max-width: 480px) {
+            body {
+                font-size: 12px;
+            }
+
+            nav h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .projects h2,
+            .stats h2 {
+                font-size: 1.8rem;
+            }
+
+            .project-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .project-card p {
+                font-size: 0.9rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat p {
+                font-size: 0.9rem;
+            }
+
+            /* Further Adjust Music Player */
+            .music-player {
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+                right: 5%;
+                bottom: 10px;
+            }
+
+            .volume-control {
+                width: 100%;
+            }
+
+            .volume-slider {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <h1>Akeanti</h1>
-        <ul>
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#stats">Stats</a></li>
             <li><a href="https://akeanti.github.io/contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -453,6 +619,7 @@
         <span class="scroll-down">Scroll down to see more ↓</span>
     </section>
 
+    <!-- Stats Section -->
     <section class="stats" id="stats">
         <h2>My Stats</h2>
         <div class="stats-grid">
@@ -482,49 +649,49 @@
             <div class="project-card">
                 <img src="pics/mentora.png" alt="Project 1">
                 <h3>Mentora</h3>
-                <p>One of the best webpages that helps teminal student, in the topic of maths with advanced setup.</p>
+                <p>One of the best webpages that helps terminal students in the topic of maths with an advanced setup.</p>
                 <a href="https://mentora-maths.github.io/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
                 <img src="pics/Tux.png" alt="Project 2">
-                <h3><a href="project2-link.html">Tux - Bot</a></h3>
-                <p>Open source discord bot, that has advanced commands, all free. Some new discord commands and new features you need!</p>
+                <h3>Tux - Bot</h3>
+                <p>Open source Discord bot that has advanced commands, all free. Some new Discord commands and new features you need!</p>
                 <a href="https://tux-discord-bot.github.io/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/pyball.png" alt="Project 2">
+                <img src="pics/pyball.png" alt="Project 3">
                 <h3>PyBall</h3>
-                <p>A satisfying python animation, using velocity and some physics. Still improving and adding more designs to it.</p>
+                <p>A satisfying Python animation using velocity and some physics. Still improving and adding more designs to it.</p>
                 <a href="https://github.com/akeanti/PyBall" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/Akeanti.png" alt="Project 2">
+                <img src="pics/Akeanti.png" alt="Project 4">
                 <h3>Homepage</h3>
-                <p>My Homepage, where I'm going to share some blogs, and other stuff about myself, my sponsors and anything I'm working on.</p>
+                <p>My Homepage, where I'm going to share some blogs, and other stuff about myself, my sponsors, and anything I'm working on.</p>
                 <a href="https://akeanti.github.io/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/better.png" alt="Project 2">
+                <img src="pics/better.png" alt="Project 5">
                 <h3>Better Embeds</h3>
-                <p>Have you ever heard of discord webhook? It's a very cool way to build your own discord embeds, with a cool message display, check it out!</p>
+                <p>Have you ever heard of Discord webhook? It's a very cool way to build your own Discord embeds with a cool message display. Check it out!</p>
                 <a href="https://better-embeds.github.io/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/Svg.png" alt="Project 2">
+                <img src="pics/Svg.png" alt="Project 6">
                 <h3>Svg 2 Embed</h3>
-                <p>Generates the best svgs images with custom text (Beta), and sends the to a discord embed of your choice, the new generation of discord webhooks.</p>
+                <p>Generates the best SVG images with custom text (Beta) and sends them to a Discord embed of your choice—the new generation of Discord webhooks.</p>
                 <a href="https://akeanti.github.io/SVG-2-Embed/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/DSV.png" alt="Project 2">
+                <img src="pics/DSV.png" alt="Project 7">
                 <h3>Silicon Valley</h3>
-                <p>Advanced discord studio, that helps the discord users by making tools they want, and need!.</p>
+                <p>Advanced Discord studio that helps Discord users by creating the tools they want and need!</p>
                 <a href="https://akeanti.github.io/Discord-Silicon-Valley/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/Md.png" alt="Project 2">
+                <img src="pics/Md.png" alt="Project 8">
                 <h3>Md Generator</h3>
-                <p>Generates README.MD files, not released yet, I'm working on a better design and more... Launchs soon!</p>
+                <p>Generates README.MD files. Not released yet, but I'm working on a better design and more features. Launching soon!</p>
                 <a href="project1.html" class="learn-more">Learn More</a>
             </div>
         </div>
@@ -551,8 +718,8 @@
 
     <!-- Scripts -->
     <script>
-                // Function to animate the stat numbers
-                function animateStats() {
+        // Function to animate the stat numbers
+        function animateStats() {
             const stats = document.querySelectorAll('.stat-number');
             stats.forEach(stat => {
                 const target = +stat.getAttribute('data-target');
@@ -581,6 +748,7 @@
         }, { threshold: 0.5 });
 
         observer.observe(statsSection);
+
         // Music player functionality
         const playPauseBtn = document.getElementById('playPauseBtn');
         const prevBtn = document.getElementById('prevBtn');
@@ -644,6 +812,24 @@
             const secs = Math.floor(seconds % 60);
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
+
+        // Hamburger Menu Functionality
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('toggle');
+        });
+
+        // Close the menu when a link is clicked (optional)
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('toggle');
+            });
+        });
     </script>
 </body>
 </html>
