@@ -9,26 +9,22 @@
     <meta name="theme-color" content="#ffffff">
     <title>Ak's Portfolio</title>
     <link rel="icon" href="pics/favicon.ico" type="image/x-icon">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
-        *, *::before, *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Base Styles */
         body {
             background: #0e0b16;
             font-family: 'Poppins', sans-serif;
             color: #ffffff;
-            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Smooth Scrolling */
+        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -40,7 +36,7 @@
             left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.8);
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
@@ -49,7 +45,7 @@
         }
 
         nav h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #ff2975;
             font-weight: bold;
             transition: transform 0.4s ease-in-out;
@@ -62,13 +58,13 @@
         }
 
         nav ul li {
-            margin-left: 1.5rem;
+            margin-left: 1.8rem;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #ffffff;
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: 500;
             transition: color 0.3s ease-in-out, transform 0.3s;
         }
@@ -90,7 +86,7 @@
         }
 
         nav:hover h1 {
-            transform: rotate(-5deg) scale(1.05);
+            transform: rotate(-5deg) scale(1.1);
         }
 
         /* Hamburger Menu Styles */
@@ -119,27 +115,26 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            padding: 0 1rem;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 4.5rem;
             color: #ff2975;
             animation: neon-glow 1.5s ease-in-out infinite;
             text-shadow: 0 0 20px #ff2975, 0 0 30px #ff2975;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
+            font-size: 1.7rem;
+            margin-top: 1rem;
             color: #cccccc;
             opacity: 0;
             animation: fade-in 2s forwards 1s;
         }
 
         .scroll-down {
-            margin-top: 1.5rem;
-            font-size: 1rem;
+            margin-top: 2rem;
+            font-size: 1.2rem;
             color: #f6f6f6;
             animation: bounce 2s infinite;
         }
@@ -170,44 +165,49 @@
 
         /* Projects Section */
         .projects {
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             background-color: #0b0e21;
             position: relative;
         }
 
         .projects h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #ff2975;
             text-align: center;
-            margin-bottom: 2rem;
             animation: fade-in 1s forwards;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .project-card {
             background: linear-gradient(145deg, #1c1c28, #292c3f);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
             transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
             overflow: hidden;
             position: relative;
         }
 
         .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
         }
 
         .project-card img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
             transition: opacity 0.4s ease-in-out;
@@ -218,7 +218,7 @@
         }
 
         .project-card h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #ff2975;
             margin-top: 1rem;
         }
@@ -226,7 +226,33 @@
         .project-card p {
             color: #cccccc;
             margin-top: 0.5rem;
-            font-size: 0.95rem;
+        }
+
+        .project-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .project-card:hover .project-hover {
+            opacity: 1;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .learn-more {
@@ -239,64 +265,11 @@
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
-            font-size: 0.9rem;
         }
 
         .learn-more:hover {
             background-color: #f36b8e;
             transform: scale(1.05);
-        }
-
-        /* Stats Section */
-        .stats {
-            background-color: #0b0e21;
-            padding: 5rem 2rem;
-            text-align: center;
-            color: #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats h2 {
-            font-size: 3rem;
-            color: #ff2975;
-            margin-bottom: 2rem;
-        }
-
-        .stats-grid {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            background: linear-gradient(145deg, #1c1c28, #292c3f);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
-            width: 200px;
-            transition: transform 0.4s ease-in-out;
-        }
-
-        .stat:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            color: #ff2975;
-            display: block;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 10px #ff2975;
-        }
-
-        .stat p {
-            color: #cccccc;
-            font-size: 1rem;
         }
 
         /* Footer */
@@ -310,7 +283,6 @@
 
         footer p {
             color: #aaaaaa;
-            font-size: 0.95rem;
         }
 
         footer::before {
@@ -339,15 +311,14 @@
             bottom: 1rem;
             right: 1rem;
             background-color: #24243e;
-            padding: 0.75rem 1rem;
+            padding: 1rem 1.5rem;
             border-radius: 25px;
             box-shadow: 0 10px 20px rgba(255, 41, 117, 0.6);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
             transition: transform 0.3s ease-in-out;
             width: 350px;
-            max-width: 90%;
             overflow: hidden;
         }
 
@@ -359,17 +330,22 @@
             background-color: #fff;
             color: #ff2975;
             border: none;
-            padding: 0.4rem;
-            border-radius: 50%;
+            padding: 0.5rem;
+            border-radius: 20%;
             cursor: pointer;
             font-size: 1rem;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s, transform 0.3s;
         }
 
         .music-player button:hover {
             background-color: #f6f6f6;
-            transform: scale(1.1);
+        }
+
+        .music-title {
+            color: #f6f6f6;
+            font-size: 1rem;
+            font-weight: 500;
+            flex-grow: 1;
         }
 
         .music-progress {
@@ -378,7 +354,6 @@
             border-radius: 5px;
             height: 6px;
             position: relative;
-            margin: 0 0.5rem;
         }
 
         .music-progress span {
@@ -392,6 +367,11 @@
             transition: width 0.4s ease-in-out;
         }
 
+        .music-time {
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
         .volume-control {
             display: flex;
             align-items: center;
@@ -400,7 +380,7 @@
 
         .volume-slider {
             -webkit-appearance: none;
-            width: 80px;
+            width: 100px;
             height: 4px;
             background: #f6f6f6;
             border-radius: 5px;
@@ -409,16 +389,68 @@
 
         .volume-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 12px;
-            height: 12px;
+            width: 15px;
+            height: 15px;
             background: #ff2975;
             border-radius: 50%;
             cursor: pointer;
         }
 
+        /* Stats Section */
+        .stats {
+            background-color: #0b0e21;
+            padding: 5rem 2rem;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats h2 {
+            font-size: 3rem;
+            color: #ff2975;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background: linear-gradient(145deg, #1c1c28, #292c3f);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+            width: 200px;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            color: #ff2975;
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px #ff2975;
+        }
+
+        .stat p {
+            color: #cccccc;
+            font-size: 1.2rem;
+        }
+
         /* Responsive Navigation */
         @media (max-width: 768px) {
-            /* Show Hamburger Menu */
+            /* Hamburger Menu */
             .hamburger {
                 display: flex;
             }
@@ -426,7 +458,7 @@
             nav ul {
                 flex-direction: column;
                 position: absolute;
-                top: 60px; /* Adjust based on nav height */
+                top: 70px; /* Adjust based on nav height */
                 left: -100%;
                 width: 100%;
                 background: rgba(0, 0, 0, 0.9);
@@ -452,7 +484,7 @@
             }
 
             nav ul li a {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
 
             .hero h1 {
@@ -460,7 +492,7 @@
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .projects h2,
@@ -469,11 +501,11 @@
             }
 
             .project-card h3 {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
 
             .project-card p {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
             .stat-number {
@@ -481,24 +513,22 @@
             }
 
             .stat p {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
 
             /* Adjust Music Player */
             .music-player {
-                width: 100%;
-                max-width: 100%;
-                right: 0.5rem;
-                bottom: 1rem;
-                padding: 0.5rem;
+                width: 90%;
+                right: 5%;
+                bottom: 10px;
             }
 
-            .music-progress {
-                margin: 0 0.3rem;
+            .music-player .music-title {
+                display: none;
             }
 
-            .volume-control {
-                display: none; /* Hide volume control on smaller screens */
+            .music-player .music-time {
+                display: none;
             }
         }
 
@@ -513,7 +543,7 @@
             }
 
             nav ul li a {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
             }
 
             .hero h1 {
@@ -530,11 +560,11 @@
             }
 
             .project-card h3 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             .project-card p {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
             }
 
             .stat-number {
@@ -547,17 +577,19 @@
 
             /* Further Adjust Music Player */
             .music-player {
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
-                padding: 0.5rem;
-            }
-
-            .music-progress {
-                margin: 0 0.2rem;
+                width: 90%;
+                right: 5%;
+                bottom: 10px;
             }
 
             .volume-control {
-                display: none; /* Ensure volume control remains hidden */
+                width: 100%;
+            }
+
+            .volume-slider {
+                width: 100%;
             }
         }
     </style>
@@ -567,7 +599,7 @@
     <nav>
         <h1>Akeanti</h1>
         <!-- Hamburger Menu Icon -->
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div class="hamburger" id="hamburger">
             <div></div>
             <div></div>
             <div></div>
@@ -615,49 +647,49 @@
         <h2>My Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="pics/mentora.png" alt="Mentora Project">
+                <img src="pics/mentora.png" alt="Project 1">
                 <h3>Mentora</h3>
                 <p>One of the best webpages that helps terminal students in the topic of maths with an advanced setup.</p>
                 <a href="https://mentora-maths.github.io/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/Tux.png" alt="Tux - Bot Project">
+                <img src="pics/Tux.png" alt="Project 2">
                 <h3>Tux - Bot</h3>
                 <p>Open source Discord bot that has advanced commands, all free. Some new Discord commands and new features you need!</p>
                 <a href="https://tux-discord-bot.github.io/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/pyball.png" alt="PyBall Project">
+                <img src="pics/pyball.png" alt="Project 3">
                 <h3>PyBall</h3>
                 <p>A satisfying Python animation using velocity and some physics. Still improving and adding more designs to it.</p>
                 <a href="https://github.com/akeanti/PyBall" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/Akeanti.png" alt="Homepage Project">
+                <img src="pics/Akeanti.png" alt="Project 4">
                 <h3>Homepage</h3>
                 <p>My Homepage, where I'm going to share some blogs, and other stuff about myself, my sponsors, and anything I'm working on.</p>
                 <a href="https://akeanti.github.io/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/better.png" alt="Better Embeds Project">
+                <img src="pics/better.png" alt="Project 5">
                 <h3>Better Embeds</h3>
                 <p>Have you ever heard of Discord webhook? It's a very cool way to build your own Discord embeds with a cool message display. Check it out!</p>
                 <a href="https://better-embeds.github.io/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/Svg.png" alt="Svg 2 Embed Project">
+                <img src="pics/Svg.png" alt="Project 6">
                 <h3>Svg 2 Embed</h3>
                 <p>Generates the best SVG images with custom text (Beta) and sends them to a Discord embed of your choice—the new generation of Discord webhooks.</p>
                 <a href="https://akeanti.github.io/SVG-2-Embed/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/DSV.png" alt="Silicon Valley Project">
+                <img src="pics/DSV.png" alt="Project 7">
                 <h3>Silicon Valley</h3>
                 <p>Advanced Discord studio that helps Discord users by creating the tools they want and need!</p>
                 <a href="https://akeanti.github.io/Discord-Silicon-Valley/" class="learn-more">Learn More</a>
             </div>
             <div class="project-card">
-                <img src="pics/Md.png" alt="Md Generator Project">
+                <img src="pics/Md.png" alt="Project 8">
                 <h3>Md Generator</h3>
                 <p>Generates README.MD files. Not released yet, but I'm working on a better design and more features. Launching soon!</p>
                 <a href="project1.html" class="learn-more">Learn More</a>
@@ -671,15 +703,16 @@
     </footer>
 
     <!-- Music Player -->
-    <div class="music-player" aria-label="Music Player">
-        <button id="prevBtn" aria-label="Previous Song">⏮️</button>
-        <button id="playPauseBtn" aria-label="Play/Pause">▶️</button>
-        <button id="nextBtn" aria-label="Next Song">⏭️</button>
-        <div class="music-progress" aria-label="Music Progress">
+    <div class="music-player">
+        <button id="prevBtn">⏮</button>
+        <button id="playPauseBtn">▶️</button>
+        <button id="nextBtn">⏭</button>
+        <div class="music-progress">
             <span id="progressBar"></span>
         </div>
-        <div class="volume-control" aria-label="Volume Control">
-            <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="0.5" aria-label="Volume Slider">
+        <div class="music-time" id="currentTime">0:00</div>
+        <div class="volume-control">
+            <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
         </div>
     </div>
 
@@ -721,16 +754,16 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const progressBar = document.getElementById('progressBar');
+        const currentTime = document.getElementById('currentTime');
         const volumeSlider = document.getElementById('volumeSlider');
 
         let isPlaying = false;
         let currentSongIndex = 0;
         const songs = [
-            { name: "song1.mp3", src: "songs/song1.mp3" },
-            { name: "song2.mp3", src: "songs/song2.mp3" },
-            // Add more songs as needed
+            { name: "song1.mp3", duration: 180 },
+            { name: "song2.mp3", duration: 200 },
         ];
-        const audio = new Audio(songs[currentSongIndex].src);
+        const audio = new Audio(songs[currentSongIndex].name);
 
         // Play and pause functionality
         playPauseBtn.addEventListener('click', () => {
@@ -744,20 +777,11 @@
             isPlaying = !isPlaying;
         });
 
-        // Update progress bar
+        // Update progress bar and time
         audio.addEventListener('timeupdate', () => {
             const progressPercent = (audio.currentTime / audio.duration) * 100;
             progressBar.style.width = `${progressPercent}%`;
-        });
-
-        // Seek functionality
-        const musicProgress = document.querySelector('.music-progress');
-        musicProgress.addEventListener('click', (e) => {
-            const width = musicProgress.clientWidth;
-            const clickX = e.offsetX;
-            const duration = audio.duration;
-
-            audio.currentTime = (clickX / width) * duration;
+            currentTime.textContent = formatTime(audio.currentTime);
         });
 
         // Volume control
@@ -777,13 +801,19 @@
         });
 
         function changeSong() {
-            audio.src = songs[currentSongIndex].src;
+            audio.src = songs[currentSongIndex].name;
             audio.play();
             playPauseBtn.textContent = '⏸️';
             isPlaying = true;
         }
 
-        // Keyboard accessibility for hamburger menu
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // Hamburger Menu Functionality
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
 
@@ -792,27 +822,12 @@
             hamburger.classList.toggle('toggle');
         });
 
-        hamburger.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                navLinks.classList.toggle('active');
-                hamburger.classList.toggle('toggle');
-            }
-        });
-
         // Close the menu when a link is clicked (optional)
         const navItems = navLinks.querySelectorAll('a');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 hamburger.classList.remove('toggle');
-            });
-        });
-
-        // Preload audio for smoother playback
-        window.addEventListener('load', () => {
-            songs.forEach(song => {
-                const preloadAudio = new Audio(song.src);
-                preloadAudio.preload = 'auto';
             });
         });
     </script>
