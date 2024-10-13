@@ -10,6 +10,18 @@
     <title>Ak's Portfolio</title>
     <link rel="icon" href="pics/favicon.ico" type="image/x-icon">
     <style>
+          :root {
+        --background-color: #ffffff; 
+        --text-color: #000000;
+        --primary-color: #6200ea;
+        --card-bg: rgba(255, 255, 255, 0.6);
+          }
+          [data-theme="dark"] {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --primary-color: #bb86fc;
+        --card-bg: rgba(40, 40, 40, 0.9);
+          }
         /* General Reset */
         * {
             margin: 0;
@@ -591,6 +603,7 @@
             <li><a href="#hero">Home</a></li>
             <li><a href="#stats">Stats</a></li>
             <li><a href="#projects">Projects</a></li>
+            <button id="theme-toggle">Switch Theme</button>
             <li><a href="https://akeanti.github.io/contact.html">Contact</a></li>
         </ul>
     </nav>
